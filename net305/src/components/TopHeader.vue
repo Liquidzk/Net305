@@ -28,9 +28,9 @@
         mode="horizontal"
         :ellipsis="false"
         @select="handleSelect">
-            <el-sub-menu index="2">
+            <el-sub-menu index="5">
                 <template #title>友情链接</template>
-                <el-menu-item index="2-1">微光工作室</el-menu-item>
+                <el-menu-item index="5-1">微光工作室</el-menu-item>
             </el-sub-menu>
         </el-menu>
       </div>
@@ -78,6 +78,7 @@
     padding: 0 20px;
     border-bottom: 1px solid #ddd;
     z-index: 1000;
+    height: 60px;
   }
   
   .header-left {
