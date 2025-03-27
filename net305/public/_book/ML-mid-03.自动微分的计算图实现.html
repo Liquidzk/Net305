@@ -1,0 +1,804 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Mid-03 自动微分的计算图实现 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ML-mid-04.多层感知机MLP实践.html" />
+    
+    
+    <link rel="prev" href="ML-mid-02.线性回归——梯度下降法的实践.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机网络方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Network-Base-00.html">
+            
+                <a href="Network-Base-00.html">
+            
+                    
+                    Base-00 计网方向介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Network-Base-01.html">
+            
+                <a href="Network-Base-01.html">
+            
+                    
+                    Base-01 网络基本组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Network-Base-02.html">
+            
+                <a href="Network-Base-02.html">
+            
+                    
+                    Base-02 应用层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Network-Base-03.html">
+            
+                <a href="Network-Base-03.html">
+            
+                    
+                    Base-03 传输层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Network-Base-04.html">
+            
+                <a href="Network-Base-04.html">
+            
+                    
+                    Base-04 网络层（IP协议）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="Network-Base-05.html">
+            
+                <a href="Network-Base-05.html">
+            
+                    
+                    Base-05 链路层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Network-Base-06.html">
+            
+                <a href="Network-Base-06.html">
+            
+                    
+                    Base-06 Socket实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="Network-Advanced-01-Utils.html">
+            
+                <a href="Network-Advanced-01-Utils.html">
+            
+                    
+                    Advanced-01 Utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机器学习方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="ML-Base.html">
+            
+                <a href="ML-Base.html">
+            
+                    
+                    Base 介绍&基础题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="ML-mid-01-中档题1.基础知识.html">
+            
+                <a href="ML-mid-01-中档题1.基础知识.html">
+            
+                    
+                    Mid-01 基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="ML-mid-02.线性回归——梯度下降法的实践.html">
+            
+                <a href="ML-mid-02.线性回归——梯度下降法的实践.html">
+            
+                    
+                    Mid-02 线性回归——梯度下降法的实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="ML-mid-03.自动微分的计算图实现.html">
+            
+                <a href="ML-mid-03.自动微分的计算图实现.html">
+            
+                    
+                    Mid-03 自动微分的计算图实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="ML-mid-04.多层感知机MLP实践.html">
+            
+                <a href="ML-mid-04.多层感知机MLP实践.html">
+            
+                    
+                    Mid-04 多层感知机(MLP)实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="ML-拓展-卷积神经网络CNN实践.html">
+            
+                <a href="ML-拓展-卷积神经网络CNN实践.html">
+            
+                    
+                    拓展题 卷积神经网络(CNN)实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="ML-Advanced-01-进阶题1.论文阅读.html">
+            
+                <a href="ML-Advanced-01-进阶题1.论文阅读.html">
+            
+                    
+                    Advanced-01 论文阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="ML-Advanced-02进阶题2.NLP任务实战.html">
+            
+                <a href="ML-Advanced-02进阶题2.NLP任务实战.html">
+            
+                    
+                    Advanced-02 NLP 任务实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    前端方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Frontend-00.html">
+            
+                <a href="Frontend-00.html">
+            
+                    
+                    Base 前端方向介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Frontend-01.html">
+            
+                <a href="Frontend-01.html">
+            
+                    
+                    01 html 元素修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Frontend-02.html">
+            
+                <a href="Frontend-02.html">
+            
+                    
+                    02 css
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Frontend-03.html">
+            
+                <a href="Frontend-03.html">
+            
+                    
+                    03 制作blog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Frontend-04.html">
+            
+                <a href="Frontend-04.html">
+            
+                    
+                    04 JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Frontend-05.html">
+            
+                <a href="Frontend-05.html">
+            
+                    
+                    05 前后端通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Frontend-06.html">
+            
+                <a href="Frontend-06.html">
+            
+                    
+                    06 认识框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    后端方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Backend-Go语言基础-level0.html">
+            
+                <a href="Backend-Go语言基础-level0.html">
+            
+                    
+                    Go语言基础-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Backend-Go语言基础-level1.html">
+            
+                <a href="Backend-Go语言基础-level1.html">
+            
+                    
+                    Go语言基础-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Backend-Go语言基础-level2.html">
+            
+                <a href="Backend-Go语言基础-level2.html">
+            
+                    
+                    Go语言基础-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Backend-后端基础.html">
+            
+                <a href="Backend-后端基础.html">
+            
+                    
+                    后端基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Backend-后端项目.html">
+            
+                <a href="Backend-后端项目.html">
+            
+                    
+                    后端项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Mid-03 自动微分的计算图实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="3自动微分的计算图实现">3.自动微分的计算图实现</h2>
+<p><img src="https://p.sda1.dev/22/3e67a9bb8199c4f48c0eae3162b2313a/Net305.png" alt=""></img></p>
+<blockquote>
+<p><code>难度</code>：简单</p>
+</blockquote>
+<p>经过第一题和第二题，想必您已经熟悉了深度学习中的基础概念，在完成本节的任务前，请确保您已经了解了前向传播，反向传播，链式法则等概念。</p>
+<h3 id="知识准备">知识准备</h3>
+<ul>
+<li>计算图是深度学习领域非常重要的基础概念，几乎我们现在使用的所有的深度学习框架都是基于计算图构建的，最为流行的TensorFlow和Pytorch就是其中的典型代表。</li>
+<li>深度学习框架中的计算都是用计算图表示的，几乎所有的框架都在计算图的基础上实现了自动微分机制。</li>
+</ul>
+<p>您需要查阅相关资料，回答以下基础问题：</p>
+<ul>
+<li>简述计算图的概念，重点区分“<strong>静态图</strong>”和“<strong>动态图</strong>”两种构图方式。</li>
+<li>阐述<strong>自动微分</strong>的概念、</li>
+</ul>
+<h3 id="进行实践">进行实践</h3>
+<p>现在，您应该已经了解了计算图、前向传播、反向传播、自动微分等基础概念，并具有python面向对象编程的能力。现在让我们来实现一个_<strong>可自动微分计算图</strong>_。</p>
+<p>您的计算图应该至少包含以下内容：</p>
+<ul>
+<li><strong>数值节点</strong></li>
+</ul>
+<p>在基于计算图搭建的深度学习框架如Pytorch、TensorFlow中，都定义了一个计算和存储数据的基本单元，如在Pytorch中，是tensor。它也就是每个计算图中的<strong>节点</strong>。为此，我们需要实现定义一个计算和存储数据的基本单元，可以用类来实现它，它的名字自定义，在此我们暂且称为"Tensor"。</p>
+<p>您需要完整地定义并实现这个"Tensor"节点。该节点的具体<strong>数据值</strong>我们可以用numpy.array来表示，也就是说，我们的"Tensor"是通过包装"numpy"实现的。</p>
+<pre><code>class Tensor:
+    def __init__(self, data, ...):
+        self.data = np.array(data)
+        ...
+​
+    ...
+​
+    def backward(self, ...):
+        ...
+    ...
+</code></pre><p>  对于"Tensor"的属性值设置，您至少需要设置完成自动微分所需要的那几个属性值。(可参考Pytorch tensor的定义)</p>
+<p>   函数backward()定义了在"Tensor"节点上<strong>实现反向传播的计算</strong>。</p>
+<ul>
+<li><strong>计算</strong></li>
+</ul>
+<p>我们现在定义的"Tensor"是类，实例化后的两个对象之间是不能直接运算的，但是像在Pytorch中两个tensor是可以直接运算的：torch.tensor(a)+torch.tensor(b)。为此，我们需要使用Python魔法方法实现<strong>运算符重载</strong>来定义我们自定义的"Tensor"的相关计算。</p>
+<pre><code>class Tensor:
+    def __init__(self, ...):
+        ...
+    def __add__(self, op2):
+        return add(self, op2)
+​
+    ...
+</code></pre><ul>
+<li><strong>操作符节点</strong></li>
+</ul>
+<p>运算符重载仅仅是使我们实例化"Tensor"对象能够像普通的数值变量一样可以直接进行计算，但是具体的计算实现操作仍需要我们另外定义，在上面的示例代码中，__add__方法内的add才是具体实现“加”操作的地方。实际上，该add就是计算图中的<strong>操作符节点</strong>。</p>
+<p>我们将操作符节点实现为一个类，它继承自数值节点"Tensor"：</p>
+<pre><code>class add(Tensor):
+    def __init__(self, ...):
+        ...
+​
+    def forward(self, ...):
+            ...
+​
+    def grad_fn(self, ...):
+        ...
+</code></pre><p>forward()方法实现的是计算图中前向传播时的计算</p>
+<p>grad\_fn()方法实现的是计算图中反向传播时该操作符节点的计算</p>
+<ul>
+<li><strong>计算图类</strong></li>
+</ul>
+<p>上面我们定义了计算图的节点，现在我们应该实现一个<strong>计算图类</strong>：</p>
+<pre><code>class Graph:
+    ...
+</code></pre><p>Graph类应该具有哪些方法和属性？请自行完成它的定义和实现。</p>
+<p><strong>最终，使用您实现的可自动微分计算图实现一个具体的计算操作：</strong></p>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre><code>x = Tensor(np.random.rand(1), requires_grad=True)
+y = exp(x) + x
+z = x * y
+t = sum(z)
+t.backward()
+print(x.grad)
+</code></pre><p>您可以将使用您实现的代码计算出的梯度值与使用如Pytorch计算出的梯度作比较以验证正确性。</p>
+<h3 id="需要提交部分">需要提交部分</h3>
+<ol>
+<li>上述完整的可运行代码，做好相关注释</li>
+<li>最终的使用您实现的可自动微分计算图实现的一个具体的计算操作的运行结果截图</li>
+</ol>
+<h3 id="提交方式">提交方式</h3>
+<p>将题目中要求的提交的总结内容（截图等）利用 Markdown 格式进行编辑，并存为 PDF 文件。将其与你的源代码一起提交至邮箱：net305ml@163.com</p>
+<p>文件名要求：姓名-学号-中档题03.pdf 或 姓名-学号-中档题03.py （若有）</p>
+<h1 id="出题者联系⽅式">出题者联系⽅式</h1>
+<blockquote>
+<font style="background-color:#FFFFFF;">QQ：2725411278</font>
+
+<p>邮箱：net305ml@163.com</p>
+</blockquote>
+<hr></hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ML-mid-02.线性回归——梯度下降法的实践.html" class="navigation navigation-prev " aria-label="Previous page: Mid-02 线性回归——梯度下降法的实践">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ML-mid-04.多层感知机MLP实践.html" class="navigation navigation-next " aria-label="Next page: Mid-04 多层感知机(MLP)实践">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mid-03 自动微分的计算图实现","level":"1.3.4","depth":2,"next":{"title":"Mid-04 多层感知机(MLP)实践","level":"1.3.5","depth":2,"path":"ML-mid-04.多层感知机MLP实践.md","ref":"ML-mid-04.多层感知机MLP实践.md","articles":[]},"previous":{"title":"Mid-02 线性回归——梯度下降法的实践","level":"1.3.3","depth":2,"path":"ML-mid-02.线性回归——梯度下降法的实践.md","ref":"ML-mid-02.线性回归——梯度下降法的实践.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ML-mid-03.自动微分的计算图实现.md","mtime":"2025-03-27T11:58:53.653Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-27T13:27:45.101Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

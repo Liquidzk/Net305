@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>05 前后端通信 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.0.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Frontend-06.html" />
+    
+    
+    <link rel="prev" href="Frontend-04.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    计算机网络方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Network-Base-00.html">
+            
+                <a href="Network-Base-00.html">
+            
+                    
+                    Base-00 计网方向介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Network-Base-01.html">
+            
+                <a href="Network-Base-01.html">
+            
+                    
+                    Base-01 网络基本组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Network-Base-02.html">
+            
+                <a href="Network-Base-02.html">
+            
+                    
+                    Base-02 应用层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Network-Base-03.html">
+            
+                <a href="Network-Base-03.html">
+            
+                    
+                    Base-03 传输层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Network-Base-04.html">
+            
+                <a href="Network-Base-04.html">
+            
+                    
+                    Base-04 网络层（IP协议）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="Network-Base-05.html">
+            
+                <a href="Network-Base-05.html">
+            
+                    
+                    Base-05 链路层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Network-Base-06.html">
+            
+                <a href="Network-Base-06.html">
+            
+                    
+                    Base-06 Socket实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="Network-Advanced-01-Utils.html">
+            
+                <a href="Network-Advanced-01-Utils.html">
+            
+                    
+                    Advanced-01 Utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    机器学习方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="ML-Base.html">
+            
+                <a href="ML-Base.html">
+            
+                    
+                    Base 介绍&基础题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="ML-mid-01-中档题1.基础知识.html">
+            
+                <a href="ML-mid-01-中档题1.基础知识.html">
+            
+                    
+                    Mid-01 基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="ML-mid-02.线性回归——梯度下降法的实践.html">
+            
+                <a href="ML-mid-02.线性回归——梯度下降法的实践.html">
+            
+                    
+                    Mid-02 线性回归——梯度下降法的实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ML-mid-03.自动微分的计算图实现.html">
+            
+                <a href="ML-mid-03.自动微分的计算图实现.html">
+            
+                    
+                    Mid-03 自动微分的计算图实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="ML-mid-04.多层感知机MLP实践.html">
+            
+                <a href="ML-mid-04.多层感知机MLP实践.html">
+            
+                    
+                    Mid-04 多层感知机(MLP)实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="ML-拓展-卷积神经网络CNN实践.html">
+            
+                <a href="ML-拓展-卷积神经网络CNN实践.html">
+            
+                    
+                    拓展题 卷积神经网络(CNN)实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="ML-Advanced-01-进阶题1.论文阅读.html">
+            
+                <a href="ML-Advanced-01-进阶题1.论文阅读.html">
+            
+                    
+                    Advanced-01 论文阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="ML-Advanced-02进阶题2.NLP任务实战.html">
+            
+                <a href="ML-Advanced-02进阶题2.NLP任务实战.html">
+            
+                    
+                    Advanced-02 NLP 任务实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    前端方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Frontend-00.html">
+            
+                <a href="Frontend-00.html">
+            
+                    
+                    Base 前端方向介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Frontend-01.html">
+            
+                <a href="Frontend-01.html">
+            
+                    
+                    01 html 元素修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Frontend-02.html">
+            
+                <a href="Frontend-02.html">
+            
+                    
+                    02 css
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Frontend-03.html">
+            
+                <a href="Frontend-03.html">
+            
+                    
+                    03 制作blog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Frontend-04.html">
+            
+                <a href="Frontend-04.html">
+            
+                    
+                    04 JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="Frontend-05.html">
+            
+                <a href="Frontend-05.html">
+            
+                    
+                    05 前后端通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Frontend-06.html">
+            
+                <a href="Frontend-06.html">
+            
+                    
+                    06 认识框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    后端方向
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Backend-Go语言基础-level0.html">
+            
+                <a href="Backend-Go语言基础-level0.html">
+            
+                    
+                    Go语言基础-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Backend-Go语言基础-level1.html">
+            
+                <a href="Backend-Go语言基础-level1.html">
+            
+                    
+                    Go语言基础-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Backend-Go语言基础-level2.html">
+            
+                <a href="Backend-Go语言基础-level2.html">
+            
+                    
+                    Go语言基础-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Backend-后端基础.html">
+            
+                <a href="Backend-后端基础.html">
+            
+                    
+                    后端基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Backend-后端项目.html">
+            
+                <a href="Backend-后端项目.html">
+            
+                    
+                    后端项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >05 前后端通信</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="frontend-05-前后端通信">Frontend-05-前后端通信</h1>
+<p><img src="https://p.sda1.dev/22/3e67a9bb8199c4f48c0eae3162b2313a/Net305.png" alt=""></img></p>
+<blockquote>
+<p><code>难度系数</code>：有点难了</p>
+<p>在前面的学习中，我们制作的页面都仅仅只使用了本地资源。接下来，我们就要迈入网络的世界了。在本节中，你将会了解互联网通信，学习AJAX，并将学到的知识应用在你第一节制作的blog profile页面中；你还将浅尝服务器端的相关知识，初试Node.js，熟悉Node.js环境，在本地搭建一个简易服务器，并在这个服务器上搭建自己的API。这道题将带领你从前端初级阶段，迈入高级阶段的大门。做好准备，咱们开始吧！</p>
+</blockquote>
+<h2 id="part0---前置知识"><strong>Part0 - 前置知识</strong></h2>
+<p>作为前端工程师，在一个大项目中不可避免的需要与后端开发者沟通。本题的目的在于带领你了解前端和后端是如何交互。Part1是站在前端开发者的视角，调用第三方的API；Part2是站在后端开发者的视角，自制一个API。除此之外，本题还将带领大家尝试使用Node.js —— 前端高阶开发的基础。Node.js是运行在服务器端的JavaScript，很多高阶的前端框架，如Vitepress（工作室的做题页面就是VitePress开发的）、Electron（VSCode就是用Electron开发的）都会使用Node.js的环境。同时Node.js也可以作为后端开发语言（虽然不是很常用），因此本题旨在带大家熟悉Node.js的环境，并为大家提供一个后端的视角，也为第四题做准备。</p>
+<p>在动手开始改进你的blog profile页面之前，你可能需要了解以下知识：</p>
+<ul>
+<li>计算机在互联网上如何交互与通信？什么是HTTP与HTTPS？什么是IP协议？</li>
+<li>HTTP请求分为哪些类型？GET和POST的区别？什么是请求行、请求头、请求体？</li>
+<li>HTTP响应是由哪些部分组成的？API往往响应什么类型的数据？了解一下JSON格式</li>
+</ul>
+<h2 id="part1---利用第三方api"><strong>Part1 - 利用第三方API</strong></h2>
+<h4 id="题目描述"><strong>题目描述</strong></h4>
+<p>如果想在自己的页面调用第三方服务器上的内容，又不愿重新加载页面，就需要我们使用Ajax技术了。一般来说，网络上会提供一些免费的接口，供开发者使用，开发者可通过调用接口来获取相关信息。我们希望你利用网络上的一些API，来对你的blog profile页面进行美化。比如添加类似于下面这样的元素：</p>
+<p><img src="https://pic.imgdb.cn/item/64feefeb661c6c8e54840445.png" alt="image-20230910215533565"></img></p>
+<h4 id="题目要求"><strong>题目要求</strong></h4>
+<p>学习使用AJAX，通过调用API的方式将元素渲染到你的blog profile页面中。以下是一些推荐使用的API：</p>
+<ul>
+<li><a href="https://dev.qweather.com/" target="_blank">和风天气</a></li>
+<li><a href="https://developer.hitokoto.cn/sentence/" target="_blank">一言</a></li>
+</ul>
+<p>在第一题的基础上加入一些元素，将美化后的页面上传到一个新的GitHub仓库当中，将GitHub链接分享给我们</p>
+<h4 id="可能遇到的问题"><strong>可能遇到的问题</strong></h4>
+<ul>
+<li><p>什么是HTTP请求？如何使用JavaScript发送HTTP请求？</p>
+</li>
+<li><p>如何测试一个API，请在本地上下载一个 Postman 或者 APIPost ，学习一下如何使用</p>
+</li>
+<li><p>HTTP请求分为GET和POST等类型，在Internet上加载网页使用的是哪种请求？获取API一般又是哪种请求？</p>
+</li>
+<li><p>AJAX是什么？什么是异步？异步有什么作用？以下是一些可以参考的资料链接。</p>
+<ul>
+<li><p><a href="https://www.runoob.com/ajax/ajax-tutorial.html" target="_blank">菜鸟教程 Ajax</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX" target="_blank">MDN Ajax</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Asynchronous/Introducing" target="_blank">异步是什么？</a></p>
+</li>
+<li><p>较难的问题可以参考B站上的视频教程</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="part2---搭建一个自己的api"><strong>Part2 - 搭建一个自己的API</strong></h2>
+<h4 id="题目描述"><strong>题目描述</strong></h4>
+<p>在上面的题目中，你已经学会使用第三方的API来美化你的博客。那么，API是如何工作的？我可以写一个自己的API吗？学习使用Node.js，尝试自己编写一个API。</p>
+<h4 id="题目要求"><strong>题目要求</strong></h4>
+<h5 id="step1"><strong>step1</strong></h5>
+<ol>
+<li>下载Node.js</li>
+<li><strong>截图记录</strong>你用Node.js搭建服务器并利用服务器在<strong>命令框</strong>和<strong>浏览器</strong>上分别显示“hello，net305”的整个过程</li>
+<li>在markdown上写下你的过程，提交一个PDF文件</li>
+</ol>
+<h5 id="step2"><strong>step2</strong></h5>
+<ol>
+<li>学习使用npm，并利用npm下载express框架（关于npm下载的过程需要<strong>截图</strong>）</li>
+<li>学习使用express框架，并利用express框架，制作一个自己的API</li>
+<li>API的功能可以仿造之前的<a href="https://developer.hitokoto.cn/sentence/" target="_blank">一言</a>API，在句子库里随机取一个句子作为返回结果</li>
+</ol>
+<h5 id="step3"><strong>step3</strong></h5>
+<ol>
+<li>使用Postman 或者 ApiPost 测试这个API，将测试界面截图</li>
+<li>整理你所有的截图，新建一个markdown文件，<strong>在md中附上你的Node.js代码和截图</strong>，导出为pdf，交给我们欣赏一下吧🥰</li>
+</ol>
+<h5 id="可能遇到的问题"><strong>可能遇到的问题</strong></h5>
+<p>我该怎么规范定义我的 API ？ 这里可以看看 <a href="https://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank">Restful API</a> 规范。</p>
+<p><strong>Node.js入门教程</strong> </p>
+<ul>
+<li><a href="https://dev.nodejs.cn/learn/" target="_blank">学习教程 | Node中文网</a> </li>
+<li><a href="https://www.runoob.com/nodejs/" target="_blank">Node.js 教程 | 菜鸟教程</a> </li>
+</ul>
+<p><strong>很多同学可能发现Node.js和之前学习的JavaScript不太一样，大家可以参考下面两个链接</strong></p>
+<ul>
+<li><a href="https://dev.nodejs.cn/learn/how-much-javascript-do-you-need-to-know-to-use-nodejs/" target="_blank">需要了解多少 JavaScript 才能使用 Node.js？</a></li>
+<li><a href="https://dev.nodejs.cn/learn/differences-between-nodejs-and-the-browser/" target="_blank">Node.js 和浏览器之间的区别?</a></li>
+</ul>
+<p><strong>express框架可以参考哪些教程？</strong></p>
+<ul>
+<li><a href="https://express.nodejs.cn/en/starter/installing.html" target="_blank">Express 教程 |Node.js中文网 </a></li>
+<li><a href="https://www.runoob.com/nodejs/nodejs-express-framework.html" target="_blank">Node.js Express 框架 | 菜鸟教程</a></li>
+<li>较难的问题可以参考B站上的视频教程</li>
+</ul>
+<h2 id="更进一步？"><strong>更进一步？</strong></h2>
+<p>感兴趣的同学还可以试试了解<strong>注册和登录的原理</strong>（cookie和session），进一步加深你对前后端通信的理解，<strong>这个部分可以不提交，提交可以作为加分项</strong>。</p>
+<p>正如我之前提到的，你可以继续使用Node.js作为后端语言（较为困难）；或者如果你曾经学过Python的话，你可以很快上手flask框架（亲测简单而且好用）来编写以下的功能：</p>
+<ul>
+<li>用户可以登录和注册，并且可以保存登录状态。在未登录时，无法查看博客。（也就是关闭页面后，一段时间内再次打开页面，还能保持登陆状态，并且<strong>没有登录状态的时候，不能访问日历界面</strong>）</li>
+<li>支持多个用户登录，用户不能查看别人的博客，用户登录的用户名和密码需要保存在数据库中（若没有学过数据库，也可以保存在JSON文件中）。</li>
+</ul>
+<h3 id="提交方式">提交方式</h3>
+<p>将题目中要求的提交的总结内容利用 Markdown 格式进行编辑，并存为 PDF 文件。将其与你的源代码一起提交至邮箱：3062803169@qq.com</p>
+<p>文件名要求：姓名-学号-前端05.pdf ，有代码的话一起打包为：姓名-学号-前端05.zip </p>
+<h1 id="出题者联系⽅式">出题者联系⽅式</h1>
+<blockquote>
+<font style="background-color:#FFFFFF;">QQ：3062803169</font>
+
+<p>邮箱：3062803169@qq.com</p>
+</blockquote>
+<hr></hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Frontend-04.html" class="navigation navigation-prev " aria-label="Previous page: 04 JavaScript">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Frontend-06.html" class="navigation navigation-next " aria-label="Next page: 06 认识框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"05 前后端通信","level":"1.4.6","depth":2,"next":{"title":"06 认识框架","level":"1.4.7","depth":2,"path":"Frontend-06.md","ref":"Frontend-06.md","articles":[]},"previous":{"title":"04 JavaScript","level":"1.4.5","depth":2,"path":"Frontend-04.md","ref":"Frontend-04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Frontend-05.md","mtime":"2025-03-27T12:27:01.629Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-03-27T13:27:45.101Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
