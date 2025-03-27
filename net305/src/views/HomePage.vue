@@ -18,7 +18,8 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
-  height: 130vh;
+  top: 0;
+  height: 120vh;
   background-image: url('@/assets/background.jpg');
   background-size: cover;
   background-position: center;

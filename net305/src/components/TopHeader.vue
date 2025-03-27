@@ -5,8 +5,8 @@
         <img src="@/assets/logo.png" alt="Logo" class="logo" />
         <!-- 创建 el-menu -->
         <el-menu mode="horizontal" class="top-menu" :default-active="activeMenu" @select="handleSelect">
-          <el-menu-item index="1" @click="goToHome">主页</el-menu-item>
-          <el-sub-menu index="2">
+          <el-menu-item index="1" >主页</el-menu-item>
+          <el-sub-menu index="2" >
             <template #title>招新题</template>
             <el-menu-item index="2-1">计算机网络</el-menu-item>
             <el-menu-item index="2-2">机器学习</el-menu-item>
@@ -16,7 +16,6 @@
               <el-menu-item index="2-3-2">后端</el-menu-item>
             </el-sub-menu>
           </el-sub-menu>
-          <el-menu-item index="3" @click="goToLearningMaterials">学习资料</el-menu-item>
           <el-menu-item index="4">关于我们</el-menu-item>
         </el-menu>
       </div>
@@ -50,16 +49,25 @@
         this.$router.push('/'); // 跳转到主页
       },
       goToLearningMaterials() {
-        this.$router.push('/learning-materials'); // 跳转到学习资料页面
+        this.$router.push('/questions'); // 跳转到学习资料页面
       },
-      goToLogin() {
-        this.$router.push('/login');
-      },
-      goToRegister() {
-        this.$router.push('/register');
-      },
-      handleSelect(item) {
-        console.log(`${item} 被点击`);
+      handleSelect(index) {
+        const routeMap = {
+          '1': '/',
+          '2': '/questions',
+          '2-1': '/questions/network',
+          '2-2': '/questions/ml',
+          '2-3-1': '/questions/frontend',
+          '2-3-2': '/questions/backend',
+        };
+
+        const targetRoute = routeMap[index];
+
+        if (targetRoute) {
+          this.$router.push(targetRoute);
+        } else {
+          console.warn('未定义的菜单项：', index);
+        }
       }
     }
   }
